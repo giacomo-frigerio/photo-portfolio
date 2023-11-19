@@ -1,0 +1,16 @@
+.navbar {
+  position: relative;
+  background-color: #000;
+  width: 100%;
+  color: #f4f4f4;
+}
+
+.navbar > button {
+  cursor: pointer;
+  border: none;
+  background-color: #000;
+  text-align: center;
+  color: #f4f4f4;
+  font-weight: 500;
+  margin: 12px;
+}
