@@ -1,17 +1,20 @@
 import coverImg from "../assets/cover.jpg";
 import styles from "./Home.module.css";
-import Navbar from "./Navbar";
+import PersonalInfo from "./PersonalInfo";
+import Portfolio from "./Portfolio";
+import About from "./About";
+import Contact from "./Contact";
 
 function Home() {
   return (
-    <>
-      <Navbar />
+    <div id="home">
+      
       <img className={styles.coverImage} src={coverImg} alt="cover" />
-      <div className={styles.personalInfo}>
-        <p>Carlotta Frigerio</p>
-        <button>Download resume</button>
-      </div>
-    </>
+      <PersonalInfo />
+      <Portfolio />
+      <About />
+      <Contact />
+    </div>
   );
 }
 

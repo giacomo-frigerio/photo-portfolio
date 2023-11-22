@@ -1,0 +1,15 @@
+.about > button {
+  border-radius: 980px;
+  cursor: pointer;
+  border: none;
+  background-color: #0071e3;
+  text-align: center;
+  color: #f4f4f4;
+  font-weight: 400;
+  padding: 3px 10px 3px 10px;
+}
+
+.about > button:hover {
+  opacity: 0.85;
+  color: #fff;
+}
