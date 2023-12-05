@@ -6,7 +6,8 @@
   text-align: center;
   color: #f4f4f4;
   font-weight: 400;
-  padding: 3px 10px 3px 10px;
+  padding: 5px 10px;
+  text-decoration: none;
 }
 
 .about > button:hover {
