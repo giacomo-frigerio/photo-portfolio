@@ -1,0 +1,47 @@
+.projects {
+  display: flex;
+  margin: 20px;
+  align-items: center;
+}
+
+.project-folder {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  filter: grayscale(100%) blur(2px);
+  margin: auto;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.open-projects {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  margin: auto;
+  padding: 5px 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.text {
+  display: inline-block;
+  text-align: left;
+  font-weight: 600;
+}
+
+.icon {
+  border-radius: 50px;
+  border: 1px solid #000;
+  justify-content: center;
+  margin-left: 10px;
+  width: 35px;
+  height: 35px;
+  fill: #fff;
+}
+
+@media only screen and (max-width: 734px) {
+  .projects {
+    flex-direction: column;
+  }
+}

@@ -14,11 +14,16 @@
   font-weight: 400;
 }
 
-.content > p {
+.content p {
   margin: 0;
+  margin-bottom: 10px;
 }
 
 .icons {
   margin-top: 5px;
   margin-bottom: 15px;
+}
+
+.icons img {
+  cursor: pointer;
 }

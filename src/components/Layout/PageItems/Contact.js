@@ -1,6 +1,5 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import styles from "./Contact.module.css";
-import { useState } from "react";
 
 const isEmpty = (value) => {
   if (value.trim().length === 0) return true;
@@ -17,7 +16,7 @@ const mailIsValid = (mail) => {
 
 const phoneNumberIsValid = (phoneNumber) => {
   const validSymbolsPhoneNumber =
-    /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im;
 
   if (isEmpty(phoneNumber)) return true;
 
@@ -68,11 +67,15 @@ function Contact() {
   const emailClass = formValidity.email ? "" : styles.invalidInput;
   const phoneNumberClass = formValidity.phoneNumber ? "" : styles.invalidInput;
   const messageClass = formValidity.message ? "" : styles.invalidInput;
+  const formIsValid =
+    formValidity.firstName &&
+    formValidity.lastName &&
+    formValidity.email &&
+    formValidity.message;
 
   return (
-    <div id="contact">
+    <div id={styles.contact}>
       <h1>Contact</h1>
-      <p>mappa con indirizzo</p>
       <form className={styles.contactsForm} onSubmit={submitHandler}>
         <input
           type="text"
@@ -113,6 +116,7 @@ function Contact() {
         ></input>
         <button>Send it</button>
       </form>
+      {!formIsValid && <p>Insert necessary fields</p>}
     </div>
   );
 }

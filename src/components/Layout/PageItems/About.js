@@ -7,7 +7,6 @@ function About() {
       <p>Description</p>
       <p>Skills</p>
       <p>Additional info (projects...)</p>
-      <button>Download resume</button>
     </div>
   );
 }

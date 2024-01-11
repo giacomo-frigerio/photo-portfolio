@@ -3,7 +3,6 @@
   grid-template-columns: auto auto;
   grid-gap: 0.75em 1em;
   width: 45em;
-  /* height: 18em; */
   margin: auto;
   margin-bottom: 10px;
 }
@@ -17,10 +16,6 @@
 .contactsForm input:focus {
   border: 2px solid #141414;
   opacity: 0.7;
-}
-
-.contactsForm p {
-  display: block;
 }
 
 .invalidInput {
@@ -52,7 +47,18 @@
   border-radius: 10px;
 }
 
-.disabled {
-  cursor: not-allowed !important;
-  opacity: 0.5;
+#contact p {
+  margin: 0;
+  margin-bottom: 15px;
+  color: #cc0033;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 734px) {
+  .contactsForm {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
 }

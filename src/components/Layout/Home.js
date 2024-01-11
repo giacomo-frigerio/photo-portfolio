@@ -1,9 +1,9 @@
-import coverImg from "../assets/cover.jpg";
+import coverImg from "../../assets/cover.jpg";
 import styles from "./Home.module.css";
-import PersonalInfo from "./PersonalInfo";
-import Portfolio from "./Portfolio";
-import About from "./About";
-import Contact from "./Contact";
+import PersonalInfo from "./PageItems/PersonalInfo";
+import Portfolio from "./PageItems/Portfolio";
+import About from "./PageItems/About";
+import Contact from "./PageItems/Contact";
 
 function Home() {
   return (
