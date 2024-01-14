@@ -1,10 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { initializeApp } from "firebase/app";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Initialize database
+const firebaseConfig = {
+  databaseURL: "https://portfolio-react-3ebf8-default-rtdb.firebaseio.com",
+};
+const app = initializeApp(firebaseConfig);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />

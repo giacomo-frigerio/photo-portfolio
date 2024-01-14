@@ -1,32 +1,36 @@
-import styles from "./Portfolio.module.css";
-import coverImg from "../../../assets/cover.jpg";
-import plusIcon from "../../../assets/plusIcon.svg";
+import Projects from "../Projects/Projects";
+import { useEffect, useState } from "react";
+import { getDatabase, ref, child, get } from "firebase/database";
 
 function Portfolio() {
+  const [projectsList, setProjectsList] = useState([]);
+
+  useEffect(() => {
+    const db = ref(getDatabase());
+    get(child(db, "projects"))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const data = snapshot.val();
+          const loadedProjects = [];
+
+          for (const key in data) {
+            loadedProjects.push(data[key]);
+          }
+
+          setProjectsList(loadedProjects);
+        } else {
+          setProjectsList([]);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   return (
     <div id="portfolio">
       <h1>Portfolio</h1>
-      <div className={styles.projects}>
-        <img
-          className={styles["project-folder"]}
-          src={coverImg}
-          alt="project-1"
-        />
-        <img
-          className={styles["project-folder"]}
-          src={coverImg}
-          alt="project-1"
-        />
-        <img
-          className={styles["project-folder"]}
-          src={coverImg}
-          alt="project-1"
-        />
-      </div>
-      <button className={styles["open-projects"]}>
-        <span className={styles.text}>Open all projects</span>
-        <img className={styles.icon} src={plusIcon} alt="open all projects" />
-      </button>
+      <Projects projects={projectsList} />
     </div>
   );
 }

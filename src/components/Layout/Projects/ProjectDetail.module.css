@@ -1,0 +1,16 @@
+.project-title {
+  margin: auto;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.imageList {
+  margin: auto;
+}
+
+.imageList > img {
+  max-width: 300px;
+  max-height: 300px;
+}

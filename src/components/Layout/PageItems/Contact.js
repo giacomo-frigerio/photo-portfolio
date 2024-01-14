@@ -74,7 +74,7 @@ function Contact() {
     formValidity.message;
 
   return (
-    <div id={styles.contact}>
+    <div id="contact" className={styles.contact}>
       <h1>Contact</h1>
       <form className={styles.contactsForm} onSubmit={submitHandler}>
         <input
